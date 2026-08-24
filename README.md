@@ -1,4 +1,4 @@
-# Custom Commands
+# Custom Commands Output
 
 一个 VSCode 扩展：自定义添加终端命令，持久化保存，并在 VSCode 终端中一键执行。
 

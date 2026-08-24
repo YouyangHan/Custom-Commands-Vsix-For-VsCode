@@ -1,6 +1,6 @@
 {
   "name": "custom-commands",
-  "displayName": "Custom Commands",
+  "displayName": "Custom Commands Output",
   "description": "自定义添加终端命令，持久化保存，并在 VSCode 终端中一键执行",
   "version": "0.1.0",
   "publisher": "YouyangHan",
@@ -20,7 +20,7 @@
       "activitybar": [
         {
           "id": "customCommands",
-          "title": "Custom Commands",
+          "title": "Custom Commands Output",
           "icon": "media/icon.png"
         }
       ]
@@ -30,7 +30,7 @@
         {
           "type": "webview",
           "id": "customCommands.view",
-          "name": "Custom Commands"
+          "name": "Custom Commands Output"
         }
       ]
     },

@@ -3,7 +3,7 @@
  */
 import * as vscode from 'vscode';
 
-const TERMINAL_NAME = 'Custom Commands';
+const TERMINAL_NAME = 'Custom Commands Output';
 
 export function runInTerminal(commandText: string, execute = true): void {
   const trimmed = commandText.trim();
