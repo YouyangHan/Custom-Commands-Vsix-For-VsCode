@@ -3,7 +3,7 @@
   "displayName": "Custom Commands",
   "description": "自定义添加终端命令，持久化保存，并在 VSCode 终端中一键执行",
   "version": "0.1.0",
-  "publisher": "custom-commands",
+  "publisher": "YouyangHan",
   "license": "MIT",
   "engines": {
     "vscode": "^1.85.0"
