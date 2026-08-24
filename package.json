@@ -1,0 +1,66 @@
+{
+  "name": "custom-commands",
+  "displayName": "Custom Commands",
+  "description": "自定义添加终端命令，持久化保存，并在 VSCode 终端中一键执行",
+  "version": "0.1.0",
+  "publisher": "custom-commands",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:customCommands.view"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "customCommands",
+          "title": "Custom Commands",
+          "icon": "media/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "customCommands": [
+        {
+          "type": "webview",
+          "id": "customCommands.view",
+          "name": "Custom Commands"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "customCommands.import",
+        "title": "Custom Commands: 导入命令",
+        "category": "Custom Commands"
+      },
+      {
+        "command": "customCommands.export",
+        "title": "Custom Commands: 导出命令",
+        "category": "Custom Commands"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "node esbuild.js --production",
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "package": "node esbuild.js --production && vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.24.0",
+    "esbuild": "^0.20.2",
+    "typescript": "^5.4.3",
+    "vitest": "^1.6.0"
+  }
+}

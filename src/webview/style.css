@@ -1,0 +1,369 @@
+:root {
+  --cc-border: var(--vscode-panel-border, rgba(128, 128, 128, 0.35));
+  --cc-hover: var(--vscode-list-hoverBackground, rgba(128, 128, 128, 0.12));
+  --cc-desc: var(--vscode-descriptionForeground, rgba(153, 153, 153, 0.8));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 8px;
+  font-family: var(--vscode-font-family);
+  font-size: var(--vscode-font-size);
+  color: var(--vscode-foreground);
+  background: transparent;
+}
+
+button {
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  padding: 3px 8px;
+  background: var(--vscode-button-secondaryBackground, transparent);
+  color: var(--vscode-button-secondaryForeground, var(--vscode-foreground));
+}
+button:hover {
+  background: var(--vscode-button-secondaryHoverBackground, rgba(128, 128, 128, 0.2));
+}
+
+/* Tabs */
+#tabs {
+  display: flex;
+  border-bottom: 1px solid var(--cc-border);
+  margin-bottom: 8px;
+}
+.tab {
+  flex: 1;
+  background: transparent;
+  border-radius: 0;
+  padding: 7px 8px;
+  color: var(--vscode-foreground);
+  border-bottom: 2px solid transparent;
+}
+.tab:hover {
+  background: var(--cc-hover);
+}
+.tab.active {
+  border-bottom-color: var(--vscode-focusBorder, #007acc);
+  color: var(--vscode-focusBorder, #007acc);
+}
+
+/* Toolbar */
+#toolbar {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.toolbar-btn {
+  background: var(--vscode-button-background);
+  color: var(--vscode-button-foreground);
+  padding: 4px 10px;
+}
+.toolbar-btn:hover {
+  background: var(--vscode-button-hoverBackground);
+}
+
+/* Tree */
+#tree {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.empty {
+  color: var(--cc-desc);
+  font-style: italic;
+  padding: 12px 4px;
+}
+
+.group {
+  margin-left: 2px;
+}
+.group > .group,
+.group > .command-node {
+  margin-left: 16px;
+}
+
+.group-header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 4px;
+  border-radius: 3px;
+}
+.group-header:hover {
+  background: var(--cc-hover);
+}
+.toggle {
+  width: 14px;
+  cursor: pointer;
+  user-select: none;
+  color: var(--cc-desc);
+  flex-shrink: 0;
+}
+.group-name {
+  font-weight: 600;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.command {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 4px;
+  border-radius: 3px;
+}
+.command:hover {
+  background: var(--cc-hover);
+}
+.command-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/* Buttons */
+.mini {
+  padding: 1px 5px;
+  font-size: 11px;
+  color: var(--vscode-button-secondaryForeground, var(--vscode-foreground));
+}
+.danger {
+  color: var(--vscode-errorForeground, #f14c4c);
+}
+.run-btn {
+  visibility: hidden;
+  background: var(--vscode-button-background);
+  color: var(--vscode-button-foreground);
+  padding: 2px 8px;
+}
+.command:hover .run-btn {
+  visibility: visible;
+}
+
+/* Editor */
+#editor {
+  margin-top: 10px;
+  border-top: 1px solid var(--cc-border);
+  padding-top: 10px;
+}
+.editor-title {
+  margin: 0 0 8px;
+  font-size: 13px;
+}
+.field {
+  margin-bottom: 8px;
+}
+.field-label {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 11px;
+  color: var(--cc-desc);
+}
+input,
+textarea,
+select {
+  width: 100%;
+  font-family: inherit;
+  font-size: 12px;
+  background: var(--vscode-input-background);
+  color: var(--vscode-input-foreground);
+  border: 1px solid var(--vscode-input-border, transparent);
+  border-radius: 3px;
+  padding: 4px 6px;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 1px solid var(--vscode-focusBorder, #007acc);
+}
+textarea {
+  resize: vertical;
+}
+.cmd-row {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+}
+.cmd-row textarea {
+  flex: 1;
+}
+.cmd-row .mini {
+  height: 28px;
+}
+
+.params-label {
+  font-size: 11px;
+  color: var(--cc-desc);
+  margin: 10px 0 6px;
+}
+.params-empty {
+  color: var(--cc-desc);
+  font-size: 11px;
+  font-style: italic;
+}
+.param-card {
+  border: 1px solid var(--cc-border);
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+.param-title {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.options-wrap {
+  margin-bottom: 8px;
+}
+.option-row {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.primary {
+  background: var(--vscode-button-background);
+  color: var(--vscode-button-foreground);
+}
+.primary:hover {
+  background: var(--vscode-button-hoverBackground);
+}
+.secondary {
+  background: var(--vscode-button-secondaryBackground, transparent);
+  color: var(--vscode-button-secondaryForeground, var(--vscode-foreground));
+}
+
+/* Status */
+#status {
+  min-height: 18px;
+  margin-top: 8px;
+  font-size: 11px;
+}
+#status.error {
+  color: var(--vscode-errorForeground, #f14c4c);
+}
+#status.info {
+  color: var(--vscode-descriptionForeground, #999);
+}
+
+/* Icon buttons */
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  background: transparent;
+  color: var(--vscode-button-secondaryForeground, var(--vscode-foreground));
+  border-radius: 3px;
+  line-height: 0;
+  flex-shrink: 0;
+}
+.icon-btn:hover {
+  background: var(--vscode-button-secondaryHoverBackground, rgba(128, 128, 128, 0.25));
+}
+.icon-btn.danger {
+  color: var(--vscode-errorForeground, #f14c4c);
+}
+.icon-btn.danger:hover {
+  background: rgba(241, 76, 76, 0.15);
+}
+.icon-btn svg {
+  display: block;
+}
+.toolbar-btn.icon-only {
+  padding: 3px 6px;
+  line-height: 0;
+}
+
+/* Settings */
+#settings {
+  display: none;
+}
+.settings-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.about {
+  border-top: 1px solid var(--cc-border);
+  padding-top: 12px;
+}
+.about-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.about-madeby {
+  margin-bottom: 4px;
+}
+.about-email {
+  color: var(--vscode-textLink-foreground);
+  text-decoration: none;
+}
+.about-email:hover {
+  text-decoration: underline;
+}
+
+/* Run page parameter rows */
+.run-params {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-left: 16px;
+  margin-bottom: 4px;
+}
+.run-param {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.run-param-label {
+  color: var(--cc-desc);
+  font-size: 11px;
+  flex-shrink: 0;
+  max-width: 96px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.run-param-select {
+  flex: 1;
+  min-width: 0;
+  padding: 2px 4px;
+  font-size: 11px;
+}
+
+/* Checkbox field */
+.checkbox-field {
+  margin-bottom: 8px;
+}
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.checkbox-label input {
+  width: auto;
+  margin: 0;
+}
+.field-hint {
+  font-size: 10px;
+  color: var(--cc-desc);
+  margin-top: 2px;
+}
