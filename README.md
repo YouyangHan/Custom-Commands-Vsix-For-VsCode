@@ -19,10 +19,10 @@
 
 ### 方式一：直接安装 VSIX 安装包（推荐）
 
-1. 下载安装包：**[custom-commands-0.1.0.vsix](https://raw.githubusercontent.com/YouyangHan/Custom-Commands-Vsix-For-VsCode/main/custom-commands-0.1.0.vsix)**
-   - 如果上面的链接无法下载，也可以在本仓库根目录直接下载 `custom-commands-0.1.0.vsix` 文件。
+1. 下载安装包：**[custom-commands-output-0.1.0.vsix](https://raw.githubusercontent.com/YouyangHan/Custom-Commands-Vsix-For-VsCode/main/custom-commands-output-0.1.0.vsix)**
+   - 如果上面的链接无法下载，也可以在本仓库根目录直接下载 `custom-commands-output-0.1.0.vsix` 文件。
 2. 打开 VSCode → 扩展面板 → 右上角「···」→ **Install from VSIX...** → 选择下载的 `.vsix` 文件。
-3. 或命令行安装：`code --install-extension custom-commands-0.1.0.vsix`
+3. 或命令行安装：`code --install-extension custom-commands-output-0.1.0.vsix`
 4. 重启 VSCode 后，点击左侧 activity bar 的图标即可打开面板。
 
 ### 方式二：从源码构建
